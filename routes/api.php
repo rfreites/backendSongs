@@ -15,20 +15,12 @@ use Illuminate\Http\Request;
 
 Route::group(['middleware' => ['authentication']], function(){
 
-	Route::get('/auth/logout', 'UserController@logout');
-
 	Route::get('/auth/current', 'UserController@current');
 	Route::patch('/auth/current', 'UserController@update');
+    Route::get('/auth/logout', 'UserController@logout');
 
-	Route::post('/chats', 'ChatController@create');
-	Route::get('/chats', 'ChatController@show');
-	Route::patch('/chats/{id}', 'ChatController@update');
-
-	Route::post('/chats/{id}/chat_messages', 'MessageController@create');
-	Route::get('/chats/{id}/chat_messages', 'MessageController@show');
-
+    Route::resource('songs','SongController');
 });
 
 Route::post('/users', 'UserController@create');
-
 Route::post('/auth/login', 'UserController@login');

@@ -14,7 +14,7 @@ class SongController extends Controller
      */
     public function index()
     {
-
+        return Song::all();
     }
 
     /**
@@ -24,7 +24,7 @@ class SongController extends Controller
      */
     public function create()
     {
-
+        //
     }
 
     /**
@@ -35,7 +35,7 @@ class SongController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return Song::firstOrCreate($request);
     }
 
     /**
@@ -46,7 +46,7 @@ class SongController extends Controller
      */
     public function show(Song $song)
     {
-        //
+        return $song;
     }
 
     /**
@@ -69,7 +69,7 @@ class SongController extends Controller
      */
     public function update(Request $request, Song $song)
     {
-        //
+        return $this->save($request, $song);
     }
 
     /**
@@ -80,6 +80,6 @@ class SongController extends Controller
      */
     public function destroy(Song $song)
     {
-        //
+        $song->delete();
     }
 }

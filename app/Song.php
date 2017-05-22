@@ -18,4 +18,9 @@ class Song extends Model
         'albumid',
         'albumname'
     ];
+
+    public function getCreatedAtAttribute($date, $fromFormat = 'Y-m-d H:i:s', $toFormat = \DateTime::ATOM)
+    {
+        return date_format(date_create_from_format($fromFormat, $date), $toFormat);
+    }
 }

@@ -42,14 +42,9 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password',
+      'password',
 	    'created_at',
 	    'updated_at',
 	    'deleted_at',
     ];
-
-	public function getCreatedAtAttribute($date, $fromFormat = 'Y-m-d H:i:s', $toFormat = \DateTime::ATOM)
-	{
-		return date_format(date_create_from_format($fromFormat, $date), $toFormat);
-	}
 }

@@ -27,7 +27,7 @@ class SongController extends Controller
                 'albumname'
             ]);
 
-            if ($request->exists('advanced') && $request->query == true)
+            if ($request->exists('advanced') && $request->advanced == true)
             {
                 $query = Song::query();
 

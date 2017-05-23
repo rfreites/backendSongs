@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Song;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Validator;
 
 class SongController extends Controller
 {
@@ -12,8 +14,41 @@ class SongController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        if ($request->exists('query') && $request->query == true)
+        {
+            $parameters = $request->only([
+                'url',
+                'songname',
+                'artistid',
+                'artistname',
+                'albumid',
+                'albumname'
+            ]);
+
+            if ($request->exists('advanced') && $request->query == true)
+            {
+                $query = Song::query();
+
+                foreach (array_filter($parameters) as $column => $values) {
+                    $query->where($column, 'LIKE', '%'. $values . '%');
+                }
+
+                $result = $query->get();
+
+            }else{
+
+                $result = Song::where(array_filter($parameters))->get();
+            }
+
+            if ($result->isEmpty())
+            {
+                return response(null, 404);
+            }
+            return response()->json($result, 200);
+        }
+
         return Song::all();
     }
 
@@ -35,7 +70,31 @@ class SongController extends Controller
      */
     public function store(Request $request)
     {
-        return Song::firstOrCreate($request);
+        $validator = Validator::make($request->all(),
+            [
+                'url'       =>'required',
+                'songname'  =>'required',
+                'artistid'  =>'required',
+                'artistname'=>'required',
+                'albumid'   =>'required',
+                'albumname' =>'required'
+            ]);
+
+        if ($validator->fails())
+        {
+            return response($validator->errors(), 409);
+        }
+
+        $parameters = $request->only([
+            'url',
+            'songname',
+            'artistid',
+            'artistname',
+            'albumid',
+            'albumname'
+        ]);
+
+        return Song::firstOrCreate($parameters);
     }
 
     /**
@@ -69,7 +128,16 @@ class SongController extends Controller
      */
     public function update(Request $request, Song $song)
     {
-        return $this->save($request, $song);
+        $parameters = $request->only([
+            'url',
+            'songname',
+            'artistid',
+            'artistname',
+            'albumid',
+            'albumname'
+        ]);
+
+        $song->update($parameters);
     }
 
     /**

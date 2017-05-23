@@ -1,0 +1,215 @@
+{
+	"variables": [],
+	"info": {
+		"name": "backend songs",
+		"_postman_id": "edc41eb5-0010-3b3c-9acf-344435c859f2",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "songs",
+			"description": "",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"url": "http://127.0.0.1:8000/api/songs",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6XC9cLzEyNy4wLjAuMTo4MDAwXC9hcGlcL2F1dGhcL2xvZ2luIiwiaWF0IjoxNDk1NTEzMDE5LCJleHAiOjE0OTU1MTY2MTksIm5iZiI6MTQ5NTUxMzAxOSwianRpIjoiNTY0MmM2OWNiM2ZiMWQ3NWQyY2FmOGMyOWQ1MmE0MWUifQ.rgIxZerKJ0fvcEjFY6Ygmpl5FSwtgpDND4YeKEHza3Y",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"url": "http://127.0.0.1:8000/api/songs?url=https://youtu.be/5r2Ej4_HiL0&songname=James Blunt-When I Find Love Again [Sub Español-Ingles]&artistid=184&artistname=James Blunt&albumid=6455&albumname=tears and rain",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6XC9cLzEyNy4wLjAuMTo4MDAwXC9hcGlcL3VzZXJzIiwiaWF0IjoxNDk1NTE0MTMxLCJleHAiOjE0OTU1MTc3MzEsIm5iZiI6MTQ5NTUxNDEzMSwianRpIjoiYjVhOGI1OTQ2MTgyYTY1OTk1ZGI2ZjQyYWRmM2EzM2MifQ.5S7pBTgVQFRx-aX2uBs8vPZBnl5vzjzXitor1SCWfYs",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"request": {
+						"url": "http://127.0.0.1:8000/api/songs/1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6XC9cLzEyNy4wLjAuMTo4MDAwXC9hcGlcL2F1dGhcL2xvZ2luIiwiaWF0IjoxNDk1NTEzMDE5LCJleHAiOjE0OTU1MTY2MTksIm5iZiI6MTQ5NTUxMzAxOSwianRpIjoiNTY0MmM2OWNiM2ZiMWQ3NWQyY2FmOGMyOWQ1MmE0MWUifQ.rgIxZerKJ0fvcEjFY6Ygmpl5FSwtgpDND4YeKEHza3Y",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"url": "http://127.0.0.1:8000/api/songs/1?url=https://youtu.be/ehEGgonfFD4&songname=Don't you remember subtitulos en ingles y español&artistid=456&artistname=Adele&albumid=9485&albumname=Don't you remember",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6XC9cLzEyNy4wLjAuMTo4MDAwXC9hcGlcL2F1dGhcL2xvZ2luIiwiaWF0IjoxNDk1NTEzMDE5LCJleHAiOjE0OTU1MTY2MTksIm5iZiI6MTQ5NTUxMzAxOSwianRpIjoiNTY0MmM2OWNiM2ZiMWQ3NWQyY2FmOGMyOWQ1MmE0MWUifQ.rgIxZerKJ0fvcEjFY6Ygmpl5FSwtgpDND4YeKEHza3Y",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"url": "http://127.0.0.1:8000/api/songs/1?url=https://youtu.be/ehEGgonfFD4&songname=Don't you remember subtitulos en ingles y español&artistid=456&artistname=Adele&albumid=9485&albumname=Don't you remember",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6XC9cLzEyNy4wLjAuMTo4MDAwXC9hcGlcL2F1dGhcL2xvZ2luIiwiaWF0IjoxNDk1NTEzMDE5LCJleHAiOjE0OTU1MTY2MTksIm5iZiI6MTQ5NTUxMzAxOSwianRpIjoiNTY0MmM2OWNiM2ZiMWQ3NWQyY2FmOGMyOWQ1MmE0MWUifQ.rgIxZerKJ0fvcEjFY6Ygmpl5FSwtgpDND4YeKEHza3Y",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "simple query",
+					"request": {
+						"url": "http://127.0.0.1:8000/api/songs?query=1&artistname=Adele",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6XC9cLzEyNy4wLjAuMTo4MDAwXC9hcGlcL2F1dGhcL2xvZ2luIiwiaWF0IjoxNDk1NTEzMDE5LCJleHAiOjE0OTU1MTY2MTksIm5iZiI6MTQ5NTUxMzAxOSwianRpIjoiNTY0MmM2OWNiM2ZiMWQ3NWQyY2FmOGMyOWQ1MmE0MWUifQ.rgIxZerKJ0fvcEjFY6Ygmpl5FSwtgpDND4YeKEHza3Y",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "advanced search",
+					"request": {
+						"url": "http://127.0.0.1:8000/api/songs?query=1&advanced=1&artistname=jam",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6XC9cLzEyNy4wLjAuMTo4MDAwXC9hcGlcL2F1dGhcL2xvZ2luIiwiaWF0IjoxNDk1NTE2NjQ0LCJleHAiOjE0OTU1MjAyNDQsIm5iZiI6MTQ5NTUxNjY0NCwianRpIjoiZDY2ZGM1NjM4YThmMDc2NzEyYTZlNjVhNTFlODJkMjkifQ.v1wQg8V2-Jb2h68tLcK3m_hHmH1QYVshRTwrm_Oddc8",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"description": "",
+			"item": [
+				{
+					"name": "create user",
+					"request": {
+						"url": "http://127.0.0.1:8000/api/users?name=John Smith&email=john@thehangar.com&password=secret&password_confirmation=secret",
+						"method": "POST",
+						"header": [],
+						"body": {},
+						"description": "create user"
+					},
+					"response": []
+				},
+				{
+					"name": "login user",
+					"request": {
+						"url": "http://127.0.0.1:8000/api/auth/login?email=john@thehangar.com&password=secret",
+						"method": "POST",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "update user",
+					"request": {
+						"url": "http://127.0.0.1:8000/api/auth/current?name=Ronny&email=ronny@thehangar.com&password=secretupdate&password_confirmation=secretupdate",
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6XC9cLzEyNy4wLjAuMTo4MDAwXC9hcGlcL2F1dGhcL2xvZ2luIiwiaWF0IjoxNDk1MzQ1MzI3LCJleHAiOjE0OTUzNDg5MjcsIm5iZiI6MTQ5NTM0NTMyNywianRpIjoiMzYzM2I0ZGFkN2VlOGZkZDc4YTc3MTIwYTUwMGNjNTkifQ.k_bvTH-YUOf8DYG9PPzMhIWVItx52wrweSiFq5VwI_U",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "update user"
+					},
+					"response": []
+				},
+				{
+					"name": "logout user",
+					"request": {
+						"url": "http://127.0.0.1:8000/api/auth/logout",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6XC9cLzEyNy4wLjAuMTo4MDAwXC9hcGlcL2F1dGhcL2xvZ2luIiwiaWF0IjoxNDk1MzM4MzU5LCJleHAiOjE0OTUzNDE5NTksIm5iZiI6MTQ5NTMzODM1OSwianRpIjoiY2UzNmY2Zjc1NGE2ZmMzYmU4NWJhOWQ1YjM3NDlkOGMifQ.eR9tEw1PC0zw8NXByzQHgf96A4R1_07bL8ho2KDLDX4",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "current user",
+					"request": {
+						"url": "http://127.0.0.1:8000/api/auth/current",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6XC9cLzEyNy4wLjAuMTo4MDAwXC9hcGlcL3VzZXJzIiwiaWF0IjoxNDk1MzQ0OTg0LCJleHAiOjE0OTUzNDg1ODQsIm5iZiI6MTQ5NTM0NDk4NCwianRpIjoiNzRiYjEyZWVkOTQzYjFmMmNmODE3OWZhYWRmYWUyZTcifQ.htUPVUOhUJazvxfYp62o9p8vGJW0u62LcA1P4r5wcSU",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

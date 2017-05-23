@@ -29,20 +29,20 @@ class Authentication
 		    try {
 
 			    if (! $user = $this->auth->parseToken()->authenticate()) {
-				    return response('User not found.', 404);
+				    return response()->json('User not found.', 404);
 			    }
 
 		    } catch (TokenExpiredException $e) {
 
-			    return response('Token expired.', $e->getStatusCode());
+			    return response()->json('Token expired.', $e->getStatusCode());
 
 		    } catch (TokenInvalidException $e) {
 
-			    return response('Token invalid.', $e->getStatusCode());
+			    return response()->json('Token invalid.', $e->getStatusCode());
 
 		    } catch (JWTException $e) {
 
-			    return response('Token absent.', $e->getStatusCode());
+			    return response()->json('Token absent.', $e->getStatusCode());
 		    }
 
         return $next($request)

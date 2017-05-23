@@ -19,7 +19,16 @@ class Song extends Model
         'albumname'
     ];
 
+    protected $hidden = [
+        'deleted_at'
+    ];
+
     public function getCreatedAtAttribute($date, $fromFormat = 'Y-m-d H:i:s', $toFormat = \DateTime::ATOM)
+    {
+        return date_format(date_create_from_format($fromFormat, $date), $toFormat);
+    }
+
+    public function getUpdatedAtAttribute($date, $fromFormat = 'Y-m-d H:i:s', $toFormat = \DateTime::ATOM)
     {
         return date_format(date_create_from_format($fromFormat, $date), $toFormat);
     }
